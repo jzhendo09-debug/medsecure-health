@@ -1,6 +1,6 @@
 # MedSecure Health AWS Foundations
 
-## Overview of Medsecure Health 
+## Overview of MedSecure Health 
 
 MedSecure Health is a fictional healthcare Software-as-a-Service (SaaS) company that provides secure digital healthcare solutions for clinics, healthcare providers, and patients.
 The platform offers services including:
