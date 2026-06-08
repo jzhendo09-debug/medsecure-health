@@ -175,4 +175,4 @@ Verified CloudTrail event logging
 
 Deployment Outcome
 
-A secure AWS foundation environment was successfully deployed to support future MedSecure Health cloud security projects.
+A secure AWS foundation environment was successfully deployed to support future MedSecure Health cloud security projects.git
