@@ -1,4 +1,4 @@
-# Medsecure Health AWS Foundations
+# MedSecure Health AWS Foundations
 
 ## Overview of Medsecure Health 
 
@@ -16,7 +16,6 @@ Because MedSecure Health handles sensitive patient information, security, availa
 The goal of this project is to design and deploy a secure AWS environment for MedSecure Health.
 Objectives include:
 - Create a secure network architecture using Amazon VPC
-- Implement public and private network segmentation
 - Deploy a web application server using Amazon EC2
 - Configure secure storage using Amazon S3
 - Implement Identity and Access Management (IAM) following the principle of least privilege
@@ -26,7 +25,9 @@ Objectives include:
 - Establish a foundation for future security monitoring and automation projects
 This project represents the initial cloud infrastructure deployment for MedSecure Health.
 
-## Architecture Diagram
+## Architecture Summary
+
+The environment consists of a custom VPC (10.0.0.0/16) containing a public subnet that hosts an Amazon Linux EC2 instance. Internet connectivity is provided through an Internet Gateway and public route table. Access is controlled using Security Groups, IAM, and MFA. AWS CloudTrail captures account activity and stores audit logs in Amazon S3.
 
 ![MedSecure Architecture](diagrams/architecture-diagram.png)
 
@@ -57,6 +58,7 @@ This project represents the initial cloud infrastructure deployment for MedSecur
 - Amazon Linux EC2 instance deployed
 - Security group configured with HTTP and SSH access
 - Instance successfully reached running state
+- SSH access restricted to My IP for administrative access
 
 ![Security Group](screenshots/security-group-created.png)
 
@@ -73,7 +75,7 @@ This project represents the initial cloud infrastructure deployment for MedSecur
 
 ![CloudTrail Event History](screenshots/cloudtrail-event-history.png)
 
-## AWS Services Used 
+## AWS Services Used
 
 - Amazon VPC
 - Amazon EC2
@@ -81,6 +83,19 @@ This project represents the initial cloud infrastructure deployment for MedSecur
 - AWS IAM
 - AWS CloudTrail
 - Security Groups
+- Internet Gateway
+- Route Tables
+- Subnets
+
+## Security Controls Implemented
+
+- Multi-Factor Authentication (MFA) enabled for IAM user access
+- Administrative access separated from root account usage
+- Security Group configured with HTTP access and restricted SSH access
+- CloudTrail enabled for account activity auditing
+- CloudTrail logs stored in Amazon S3
+- S3 bucket versioning enabled for data protection
+- Principle of Least Privilege applied to network access controls
 
 ## Lessons Learned
 
